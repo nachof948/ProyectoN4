@@ -1,0 +1,96 @@
+:root{
+    --color-principal: #5F4DEE;
+    --color-secundario: #FFFFFF;
+    --color-subtitulos: #32373E;
+    --color-precios: #2B4DFF;
+    --color-background-section: #F5F6FB;
+    --color-texto-secundario: #76838C;
+}
+///MIXIN
+@mixin btn{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    transition: all 250ms;
+}
+@mixin hs{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600
+}
+
+//BOTONES
+.btn-main-white{
+    @include btn;
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    border: 1px solid var(--color-secundario);
+    &:hover{
+        background-color: transparent;
+        color: var(--color-secundario);
+    }
+}
+.btn-main-transparent{
+    @include btn;
+    background-color: transparent;
+    color: var(--color-secundario);
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    border: 1px solid var(--color-secundario);
+    &:hover{
+        background-color: var(--color-secundario);
+        color: var(--color-principal);
+    }
+}
+.btn-secundario-transparent{
+    @include btn;
+    @extend .btn-main-transparent;
+    padding: 0.2rem 1.5rem;
+}
+.btn-secundario-purple{
+    @extend .btn-secundario-transparent;
+    background-color: var(--color-principal);
+    padding: 1rem 2.2rem;
+}
+.btn-modal-white{
+    @extend .btn-main-white;
+    border: 1px solid var(--color-principal);
+    &:hover{
+        background-color: var(--color-principal)
+    }
+}
+.btn-modal-purple{
+    @extend .btn-secundario-purple;
+    &:hover{
+        border: 1px solid var(--color-principal)
+    }
+}
+//TITULOS Y PARRAFOS
+h1{
+    @include hs;
+    color: var(--color-secundario);
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 70px;
+}
+h2{
+    @include hs;
+    color: var(--color-subtitulos);
+    font-size: 32px;
+}
+h3{
+    @include hs;
+    font-size: 20px;
+    color: var(--color-subtitulos);
+}
+.text-header{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: var(--color-secundario);
+}
+h6{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: var(--color-principal);
+    font-size: 13px;
+}
